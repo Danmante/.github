@@ -1,7 +1,6 @@
 <div align="center">
 
-<img width="140" height="140" alt="Danmante logo" src="https://github.com/user-attachments/assets/2e4b1bab-cd1a-4016-acaa-4753fc6672a4" />
-
+<img width="1254" height="1254" alt="file_00000000747081f69a8edc01bb2a768e" src="https://github.com/user-attachments/assets/ceca1477-ee1a-4b62-aba5-fd89f1fcd29e" />
 # Danmante — `.github`
 
 ### Community health files, CI, and contribution workflow for the Danmante repository
