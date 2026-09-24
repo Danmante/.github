@@ -1,65 +1,83 @@
-<div align="center">
+<p align="center">
+  <img src="./profile/docs/project-banner.svg" alt="Danmante project banner" width="960" />
+</p>
 
-<img width="1254" height="1254" alt="file_00000000747081f69a8edc01bb2a768e" src="https://github.com/user-attachments/assets/ceca1477-ee1a-4b62-aba5-fd89f1fcd29e" />
-# Danmante  `.github`
+# Danmante
 
-### Community health files, CI, and contribution workflow for the Danmante repository
+A professional, safety-first digital health foundation for secure patient access, jurisdiction-aware clinical workflows, and trusted pharmacy coordination.
 
-</div>
+## Purpose of this repository
 
----
+This repository serves as the GitHub foundation for the Danmante project. It centralizes governance, contribution standards, issue templates, CI workflow setup, and the public-facing documentation needed to support a credible open-source digital health initiative.
 
-## What's in here
+## Repository structure
 
+```text
+.
+├── .github/                     # GitHub configuration and automation
+│   ├── ISSUE_TEMPLATE/          # Bug and feature request templates
+│   ├── workflows/              # CI/CD automation
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── dependabot.yml
+├── profile/                    # Public profile and branding assets
+│   ├── README.md
+│   └── docs/
+├── docs/                       # Project documentation index and concept docs
+│   ├── README.md
+│   ├── architecture/
+│   ├── clinical/
+│   ├── security/
+│   └── compliance/
+├── .env.example                # Example environment configuration
+├── .gitignore
+├── API.md
+├── CLINICAL_SAFETY.md
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── DANMANTE_CANONICAL_TRUTH.md
+├── DATA_PROCESSING.md
+├── GOVERNANCE.md
+├── LICENSE
+├── PRIVACY.md
+├── PRODUCTION_READINESS_REPORT.md
+├── SECURITY.md
+├── README.md
+└── danmante-logo.png
 ```
-.github/
-├── workflows/
-│   └── ci.yml                     → CI pipeline (lint, typecheck, tests, build, security scan)
-├── ISSUE_TEMPLATE/
-│   ├── bug_report.md              → Bug report template
-│   └── feature_request.md         → Feature request template
-├── PULL_REQUEST_TEMPLATE.md       → PR checklist
-└── dependabot.yml                 → Automated dependency & GitHub Actions updates
-```
 
----
+## Core standards
 
-## CI Pipeline (`workflows/ci.yml`)
+- Safety-first design and fail-closed operational logic
+- Clear contribution rules and review gates
+- Security-first vulnerability handling
+- Clinical and jurisdiction-aware decision processes
+- Documentation that is maintainable and reviewable
 
-Runs on every pull request and on push to `main`:
+## Key documentation
 
-| Job | Steps |
-|---|---|
-| **build-test** | install → lint → typecheck → unit tests → integration tests → build |
-| **security-scan** | dependency audit, secret scanning (TruffleHog) |
-| **accessibility** | placeholder hook for axe-core/pa11y once a deployed preview exists |
+- [Project profile](./profile/README.md)
+- [Contributing guide](./CONTRIBUTING.md)
+- [Security policy](./SECURITY.md)
+- [Clinical safety policy](./CLINICAL_SAFETY.md)
+- [Governance](./GOVERNANCE.md)
+- [Production readiness report](./PRODUCTION_READINESS_REPORT.md)
+- [Documentation index](./docs/README.md)
 
-Production deployment is expected to fail if critical tests fail, typecheck fails, the build fails, required secrets are missing, or migrations are invalid — see [`../PRODUCTION_READINESS_REPORT.md`](../PRODUCTION_READINESS_REPORT.md) for current CI execution status (this environment has no outbound network access, so the pipeline has been authored but not yet run end-to-end).
+## Workflow and automation
 
----
+This repository includes GitHub automation for:
 
-## Issue Templates
+- CI validation
+- pull request checklists
+- issue intake
+- dependency updates
 
-- **Bug report** — reproduction steps, expected behavior, and the affected area (`frontend`/`backend`/`clinical`/`pharmacy`/`security`/`payments`/`identity`/`fhir`/`jurisdiction`/`devops`).
-- **Feature request** — problem statement, proposed solution, and a required flag for clinical/legal impact. Any feature with clinical or legal impact must be tagged `area:clinical` and routed through the review process in [`../CLINICAL_SAFETY.md`](../CLINICAL_SAFETY.md) before merge.
+See the [workflow configuration](./workflows/ci.yml) and the issue templates in [ISSUE_TEMPLATE](./ISSUE_TEMPLATE).
 
-## Pull Request Template
+## Contribution model
 
-Every PR checklist confirms: lint/typecheck/tests pass locally, no secrets committed, docs updated if behavior changed, and — critically — that any change touching clinical, pharmacy, verification, or payment code has been checked against [`../CLINICAL_SAFETY.md`](../CLINICAL_SAFETY.md) and [`../SECURITY.md`](../SECURITY.md).
+We welcome collaboration that is well-scoped, documented, and respectful. For safety-sensitive work, follow the review standards defined in [CLINICAL_SAFETY.md](./CLINICAL_SAFETY.md) and [SECURITY.md](./SECURITY.md).
 
-## Dependabot
+## License
 
-Weekly automated update checks for both npm dependencies and GitHub Actions versions, keeping the supply chain current without manual tracking.
-
----
-
-## Labels used across issues & PRs
-
-**Area:** `area:frontend` `area:backend` `area:clinical` `area:pharmacy` `area:security` `area:payments` `area:identity` `area:fhir` `area:jurisdiction` `area:devops`
-**Priority:** `priority:critical` `priority:high` `priority:medium` `priority:low`
-**Type:** `type:bug` `type:feature` `type:security` `type:clinical` `type:documentation`
-**Status:** `status:blocked` `status:ready` `status:in-progress` `status:review`
-
----
-
-For the full project overview, see the [main README](../README.md).
+This project is licensed under the [MIT License](./LICENSE).
