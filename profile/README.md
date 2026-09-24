@@ -4,9 +4,9 @@
         <img src="./docs/project-banner.svg" alt="Danmante project banner" width="960" />
 </p>
 
-# Danmante
-
-### Global Open-Source Digital Health Infrastructure
+<p align="center">
+  <img src="../danmante-logo.png" alt="Danmante logo" width="140" />
+</p>
 
 **Healthcare access, connected.**
 
